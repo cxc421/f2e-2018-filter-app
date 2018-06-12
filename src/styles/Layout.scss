@@ -1,0 +1,36 @@
+@import 'globals';
+
+.layout {
+
+  .container {
+    max-width: $max-viewport-width;
+    margin: 0 auto;
+    display: flex;
+
+    @include mobile {
+      flex-wrap: wrap;
+    }
+
+    .layout-left {
+      flex-basis: 300px;
+      flex-grow: 0;
+      flex-shrink: 0;
+      // background: yellow;
+      // height: 400px;
+
+      @include mobile {
+        flex-basis: 100%;
+      }      
+    }
+
+    .layout-right {
+      // background: skyblue;
+      // height: 700px;
+      flex-grow: 1;
+
+      @include mobile {
+        flex-basis: 100%;
+      }
+    }
+  }
+}

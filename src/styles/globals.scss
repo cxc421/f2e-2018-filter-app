@@ -14,7 +14,7 @@ $font-size-2: 20px;
 $font-size-3: 24px;
 $font-size-4: 36px;
 
-$max-viewport-width: 1280px;
+$max-viewport-width: 992px;
 
 @mixin _breakpoint($maxWidth) {
   @media (max-width: $maxWidth) {
