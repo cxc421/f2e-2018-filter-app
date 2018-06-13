@@ -34,14 +34,13 @@ const Article = (props) => {
         </div>
 
         <div className="info-area-2">
-          <div className="icon-and-span">
-            <i className="fa fa-map-marker"></i>
-            <span>{location}</span>
-          </div>
-          <div className="icon-and-span">
-            <i className="fa fa-calendar"></i>
-            <span>{date}</span>
-          </div>
+        
+          <i className="fa fa-map-marker"></i>
+          <span>{location}</span>
+
+          <i className="fa fa-calendar"></i>
+          <span>{date}</span>
+
         </div>
 
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae libero possimus quisquam commodi harum, adipisci ullam consequatur, saepe minima autem quae iusto at, repellendus consequuntur fugit sint error a eligendi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi nesciunt consequatur earum! Distinctio mollitia sint earum eum rem omnis! Facere dolorem id repellat consequatur ducimus, quae non praesentium quas voluptatibus.

@@ -19,6 +19,11 @@ header {
       padding: 20px 40px;  
       justify-content: space-between;    
     }
+
+    @include mobile_small {
+      // padding-left: 16px;
+      // padding-right: 16px;
+    }
   }
 
   .logo {
