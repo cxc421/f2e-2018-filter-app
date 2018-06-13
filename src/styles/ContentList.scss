@@ -1,0 +1,31 @@
+@import 'globals';
+
+.content-list {
+  position: relative;
+  padding: 1px 40px 0 40px;
+
+  .list-num-text {
+    font-size: $font-size-3;
+    line-height: $font-size-3 + 4px;
+    margin-top: 23px;
+
+    em {
+      color: $purple-dark;
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .filter-tags-area {
+    margin-top: 8px;
+    margin-bottom: -4px;
+
+    @include mobile {
+      display: none;
+    }    
+  }
+}

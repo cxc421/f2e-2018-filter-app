@@ -4,7 +4,7 @@ import FilterCard from 'components/FilterCard';
 const FilterList = (props) => {
   return (
     <div>
-      <FilterCard title="Location" open={true}>
+      <FilterCard title="Location" open={false}>
         <div>
           <select>
             <option value="taiwan">Taiwan</option>

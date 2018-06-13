@@ -5,6 +5,7 @@ import 'styles/App.scss';
 import Header from 'components/Header';
 import Layout from 'components/Layout';
 import FilterList from 'components/FilterList';
+import ContentList from 'components/ContentList';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Header></Header>
       <Layout 
         LeftComponent={FilterList}
+        RightComponent={ContentList}
       />
     </div>
   );

@@ -1,0 +1,32 @@
+@import 'globals';
+
+.filter-tag {
+  display: inline-flex;
+  align-items: center;
+    
+  padding: 8px 16px;
+  color: $purple-light;
+  border: 1px solid $purple-light;
+  border-radius: 100px;
+  transition: color .3s, background .3s;
+  cursor: pointer;
+  font-size: $font-size-1;
+  font-style: italic;
+  line-height: $font-size-1 + 3px;  
+  margin-left: 8px;
+  margin-bottom: 4px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:hover {
+    color: $white;
+    background: $purple-light;
+  }
+
+  i {
+    margin-left: 8px;
+    display: block;
+  }
+}
