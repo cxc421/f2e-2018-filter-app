@@ -5,9 +5,6 @@ import IMG_URL from 'images/content-2.jpg';
 
 const Article = (props) => {
   const title = "Kogi Cosby serater ethical";
-  const imgStyle = {
-    backgroundImage: `url(${IMG_URL})`
-  };
   const author = "Ethan Foster";
   const category = "Entertainment";
   const location = "Kaohsiung City";
@@ -20,10 +17,8 @@ const Article = (props) => {
         <span className="slash">/</span>
         <span className="title">{title}</span>
       </div>
-      <div 
-        className="article-img"
-        style={imgStyle}
-      >
+      <div className="article-img">
+        <img src={IMG_URL} alt="article-img"/>
       </div>
       <div className="article-body">
 

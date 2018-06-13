@@ -23,13 +23,11 @@
   }
 
   .article-img {
-    height: 352px;
     margin-top: 14px;
-    
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;  
-    background-color: black;  
+    width: 100%;
+    img {
+      width: 100%;
+    } 
   }
 
   .article-body {
