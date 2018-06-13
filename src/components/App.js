@@ -6,6 +6,7 @@ import Header from 'components/Header';
 import Layout from 'components/Layout';
 import FilterList from 'components/FilterList';
 import ContentList from 'components/ContentList';
+import Article from 'components/Article';
 
 const App = () => {
   return (
@@ -13,8 +14,8 @@ const App = () => {
       <Header></Header>
       <Layout 
         LeftComponent={FilterList}
-        RightComponent={ContentList}
-        hideLeftComponentWhenMobile={false}
+        RightComponent={Article}
+        hideLeftComponentWhenMobile={true}
       />
     </div>
   );

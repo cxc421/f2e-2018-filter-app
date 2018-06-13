@@ -40,8 +40,8 @@
     float: left;
     height: 220px;
     width: calc(100% - 220px);
-    background: white; 
     padding: 24px 20px;   
+    background: $white;
 
     @include pad {
       width: 100%; 
