@@ -3,11 +3,11 @@ import 'styles/Layout.scss';
 
 const EmptyComponent = () => null;
 
-const Layout = ({LeftComponent = EmptyComponent, RightComponent = EmptyComponent}) => {
+const Layout = ({LeftComponent = EmptyComponent, RightComponent = EmptyComponent, hideLeftComponentWhenMobile = false}) => {
   return (
     <div className="layout">
       <div className="container">
-        <div className="layout-left">
+        <div className={`layout-left ${hideLeftComponentWhenMobile ? "hide-when-mobile" : ""}`}>
           <LeftComponent />
         </div>
         <div className="layout-right">

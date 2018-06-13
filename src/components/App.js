@@ -14,6 +14,7 @@ const App = () => {
       <Layout 
         LeftComponent={FilterList}
         RightComponent={ContentList}
+        hideLeftComponentWhenMobile={false}
       />
     </div>
   );

@@ -20,7 +20,13 @@
 
       @include mobile {
         flex-basis: 100%;
-      }      
+      } 
+      
+      &.hide-when-mobile {
+        @include mobile {
+          display: none;
+        }        
+      }
     }
 
     .layout-right {
