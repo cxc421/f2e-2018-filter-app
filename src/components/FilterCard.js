@@ -18,12 +18,12 @@ class FilterCard extends Component {
     const className = `filter-card ${ open ? "open" : "" }`;
     return (
       <div className={className}>
-        <h2 className="title">
+        <h2 
+          className="title" 
+          onClick={this.toogleFilterCard}
+        >
           {title}
-          <div 
-            className="toggle-icon"
-            onClick={this.toogleFilterCard}
-          ></div>
+          <div className="toggle-icon"></div>
         </h2>
         <div className="content">
           {children}

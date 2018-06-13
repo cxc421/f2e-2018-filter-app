@@ -5,7 +5,7 @@ header {
   background-color: $purple-dark;
 
   @include mobile {
-    margin-bottom: 55px;
+    margin-bottom: 65px;
   }
 
   .container {
@@ -59,6 +59,7 @@ header {
       left: 50%;
       margin-left: 0;
       transform: translateX(-50%);
+      margin-top: 7px;
       
       width: 100%;
       max-width: calc(100% - 80px);
