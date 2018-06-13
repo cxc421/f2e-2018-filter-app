@@ -3,13 +3,14 @@ import 'styles/ContentCard.scss';
 
 const ContentCard = ({imgUrl, title, content, author, category, location, date}) => {
   return (
-    <div className="content-card">
-      <div 
+    <a href="#" className="content-card">
+      <div
         className="content-img"
         style={{
           backgroundImage: `url(${imgUrl})`
         }}
-      ></div>
+      >
+      </div>
       <div className="content-body">
         <h2 className="title">{title}</h2>
         <p className="preview">{content}</p>
@@ -27,8 +28,8 @@ const ContentCard = ({imgUrl, title, content, author, category, location, date})
             <span>{date}</span>
           </div>
         </div>
-      </div>      
-    </div>
+      </div>    
+    </a>
   );
 };
 
