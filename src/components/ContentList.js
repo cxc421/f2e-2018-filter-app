@@ -2,6 +2,7 @@ import React from 'react';
 import 'styles/ContentList.scss';
 import FilterTag from 'components/FilterTag';
 import ContentCard from 'components/ContentCard';
+import Pagination from 'components/Pagination';
 
 // demo
 import URL_CONTENT_2 from 'images/content-2.jpg';
@@ -18,7 +19,7 @@ const ContentList = () => {
       date: "2018/5/24"
     }
   ];
-  for (let i=1; i<5; i++) {
+  for (let i=1; i<2; i++) {
     list.push(list[0]);
   }
 
@@ -34,6 +35,9 @@ const ContentList = () => {
           <ContentCard key={idx} {...obj} />
         )
       }
+      <div className="pagination-area">
+        <Pagination />
+      </div>
     </div>
   );
 };

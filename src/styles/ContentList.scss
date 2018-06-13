@@ -28,4 +28,13 @@
       display: none;
     }    
   }
+
+  .pagination-area {
+    margin-top: 24px;
+    text-align: right;
+
+    @include mobile {
+      text-align: center;
+    }
+  }
 }
