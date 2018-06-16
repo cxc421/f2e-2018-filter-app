@@ -3,43 +3,55 @@ import 'styles/ContentList.scss';
 import FilterTag from 'components/FilterTag';
 import ContentCard from 'components/ContentCard';
 import Pagination from 'components/Pagination';
+import { appContext } from 'app_context';
 
-// demo
-import URL_CONTENT_2 from 'images/content-2.jpg';
+class ContentList extends React.PureComponent {
+  render() {
+    const { filterData, free, open24, updateFilter, dataNumberPerPage, currentPage } = this.props;
 
-const ContentList = () => {
-  const list = [
-    {
-      imgUrl: URL_CONTENT_2,
-      title: "Kogi Cosby serater.",
-      content: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia quas, unde autem amet fugit mollitia aliquid veritatis eius ab, reiciendis atque itaque optio dolores velit consequuntur exercitationem cupiditate fuga quibusdam.",
-      author: "Ethan Foster",
-      category: "Entertainment",
-      location: "Kaohsiung City",
-      date: "2018/5/24"
-    }
-  ];
-  for (let i=1; i<2; i++) {
-    list.push(list[0]);
+    const startDataIdx = (currentPage - 1) * dataNumberPerPage;
+    const endDataIdx = startDataIdx + dataNumberPerPage;
+
+    return (
+      <div className="content-list">
+        <p className="list-num-text">找到 <em>{filterData.length}</em> 個符合的地點...</p>
+        <div className="filter-tags-area">
+          { free && 
+            <FilterTag
+             deleteFunc={() => updateFilter('free', false)}
+            >
+              免費參觀
+            </FilterTag>
+          }
+          { open24 && 
+            <FilterTag
+            deleteFunc={() => updateFilter('open24', false)}
+            >
+              全天候開放
+            </FilterTag>
+          }
+        </div>
+        {
+          filterData.slice(startDataIdx, endDataIdx).map(obj =>
+            <ContentCard key={obj.Id} {...obj} />
+          )
+        }
+        <div className="pagination-area">
+          <Pagination />
+        </div>
+      </div>
+    );    
   }
+}
 
-  return (
-    <div className="content-list">
-      <p className="list-num-text">Showing <em>{ 15 }</em> results by...</p>
-      <div className="filter-tags-area">
-        <FilterTag>Koahsiung</FilterTag>
-        <FilterTag>Entertainment</FilterTag>
-      </div>
-      {
-        list.map((obj, idx) => 
-          <ContentCard key={idx} {...obj} />
-        )
-      }
-      <div className="pagination-area">
-        <Pagination />
-      </div>
-    </div>
-  );
-};
-
-export default ContentList;
+export default (props) => (
+  <appContext.Consumer>
+    {
+      appState => 
+        <ContentList 
+          {...props}
+          {...appState}
+        />
+    }
+  </appContext.Consumer>
+);

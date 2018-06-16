@@ -1,35 +1,50 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import 'styles/ContentCard.scss';
 
-const ContentCard = ({imgUrl, title, content, author, category, location, date}) => {
+const ContentCard = ({ Picture1, Name, Description, Ticketinfo, Opentime, Zone, Id}) => {
+
+  const handleClick = () => {
+    console.log('click');    
+  };
+
+  const subDescription = Array.prototype.slice.call(Description, 0, 60).join('') + "...";
+  // console.log(subDescription);
+
   return (
-    <a href="#" className="content-card">
+    <Link to={`/article/${Id}`} className="content-card" onClick={handleClick}>
       <div
         className="content-img"
         style={{
-          backgroundImage: `url(${imgUrl})`
+          backgroundImage: `url(${Picture1})`
         }}
       >
       </div>
       <div className="content-body">
-        <h2 className="title">{title}</h2>
-        <p className="preview">{content}</p>
+        <h2 className="title">{Name}</h2>
+        <p className="preview">{subDescription}</p>
         <div className="info-area-1">
-          <span className="author">{author}</span>
-          <span className="category">{category}</span>
+          {
+            Ticketinfo === "免費參觀" &&
+            <span className="category">免費參觀</span>
+          }
+          {
+            Opentime === "全天候開放" &&
+            <span className="category">全天候開放</span>
+          }
         </div>
         <div className="info-area-2">
           <div className="icon-and-span">
             <i className="fa fa-map-marker"></i>
-            <span>{location}</span>
+            <span>{Zone}</span>
           </div>
           <div className="icon-and-span">
-            <i className="fa fa-calendar"></i>
-            <span>{date}</span>
+            <i className="fa fa-clock-o"></i>
+            <span>{Opentime}</span>
           </div>
         </div>
       </div>    
-    </a>
+    </Link>
   );
 };
 

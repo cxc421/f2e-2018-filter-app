@@ -1,0 +1,30 @@
+@import 'globals';
+
+.scroll-top-button {
+  &.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  position: fixed;
+  display: flex;
+  width: 54px;
+  height: 54px;
+  justify-content: center;
+  align-items: center;
+  font-size: $font-size-3;
+  background: $purple-light;
+  color: $white;
+  border-radius: 100px;
+  opacity: .6;
+
+  right: 40px;
+  bottom: 80px;
+
+  cursor: pointer;
+  transition: opacity .3s;
+
+  &:hover {
+    opacity: .85;
+  }
+}

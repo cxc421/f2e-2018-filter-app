@@ -1,9 +1,10 @@
 import React from 'react';
 import 'styles/Layout.scss';
+import ScrollTopButton from 'components/ScrollTopButton'; 
 
 const EmptyComponent = () => null;
 
-const Layout = ({LeftComponent = EmptyComponent, RightComponent = EmptyComponent, hideLeftComponentWhenMobile = false}) => {
+const Layout = ({LeftComponent = EmptyComponent, RightComponent = EmptyComponent, hideLeftComponentWhenMobile = false, match}) => {
   return (
     <div className="layout">
       <div className="container">
@@ -11,9 +12,10 @@ const Layout = ({LeftComponent = EmptyComponent, RightComponent = EmptyComponent
           <LeftComponent />
         </div>
         <div className="layout-right">
-          <RightComponent />
+          <RightComponent match={match} />
         </div>      
       </div>
+      <ScrollTopButton />
     </div>
   );
 };

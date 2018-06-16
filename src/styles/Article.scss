@@ -51,25 +51,34 @@
     }
 
     .info-area-1 {
-      margin-top: 24px;
+      margin-bottom: 20px;
       font-size: $font-size-1;
-      line-height: 19px;
       display: flex;
       
       .author {
+        margin-top: 24px;
         color: $black;
         font-weight: bold;
         padding: 3px 0 2px 0;
+        font-size: $font-size-2;
+        line-height: 19px;
       }
 
       .category {
+        margin-top: 24px;
+        line-height: 19px;
         font-style: italic;
         padding: 3px 16px 2px 16px;
-        margin-left: 20px;
-        background: $grey-3;
+        margin-left: 10px;
+        background: $grey-4;
         border-radius: 100px;
         color: $white;
+
+        &:first-child {
+          margin-left: 0;
+        }
       }
+
     }
 
     .info-area-2 {

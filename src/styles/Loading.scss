@@ -1,0 +1,10 @@
+@import 'globals';
+
+.loading {
+  width: 100%;
+  display: block;
+  padding-top: 80px;
+  text-align: center;
+  color: $purple-light;
+  font-size: $font-size-3;
+}
