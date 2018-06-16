@@ -4,7 +4,7 @@ import 'styles/ScrollTopButton.scss';
 export default class ScrollTopButton extends React.PureComponent {
 
   state = {
-    hide: false
+    hide: true
   };
 
   intervalId = null;
