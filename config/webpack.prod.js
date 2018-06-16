@@ -6,14 +6,15 @@ const CleanWbepackPlugin = require('clean-webpack-plugin');
 
 const webpackCommon = require('./webpack.common');
 
-const pathsToClean = ['dist'];
+const pathsToClean = ['dist', 'docs'];
 const cleanOptions = {
   root: path.resolve(__dirname, '../')
 };
 
 module.exports = merge.smart(webpackCommon, {
   output: {
-    filename: "main.[chunkhash].js"
+    filename: "main.[chunkhash].js",
+    path: path.resolve(__dirname, "../docs")
   },
   mode: "production",
   optimization: {
