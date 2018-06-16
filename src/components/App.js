@@ -1,5 +1,5 @@
 import React from 'react';
-import 'font-awesome/scss/font-awesome.scss';
+// import 'font-awesome/scss/font-awesome.scss';
 import 'styles/App.scss';
 import axios from 'axios';
 import { HashRouter, Route } from 'react-router-dom';
@@ -90,7 +90,18 @@ class App extends React.PureComponent {
   componentDidMount() {
     axios.get(API_URL)
       .then(({data}) => {
-        this.setState({data: data.result.records});
+        let {records} = data.result;
+
+        if (location.protocol === 'https:') {
+          records = records.map(obj => {
+            return {
+              ...obj,
+              Picture1: obj.Picture1.replace('http:', 'https:')
+            };
+          })
+        }
+
+        this.setState({data: records});
       });
   }
 }
