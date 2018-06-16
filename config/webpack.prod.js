@@ -42,6 +42,6 @@ module.exports = merge.smart(webpackCommon, {
   },
   plugins: [
     new CleanWbepackPlugin(pathsToClean, cleanOptions),
-    // new OptimizeCssAssetsPlugin()
+    new OptimizeCssAssetsPlugin()
   ]
 });
